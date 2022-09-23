@@ -1,0 +1,59 @@
+<section>
+  <fieldset>
+    <label for="string">Numero de rut</label>
+    <input
+    type="text"
+    name=""
+    [value]="alumno.rut"
+    (input)="cambiarRut($event)" />
+
+  </fieldset>
+
+  <fieldset>
+    <label for="string">ingrese su Nombre</label>
+    <input
+    type="text"
+    name="Name"
+    [value]="alumno.nombre"
+    (input)="cambiarNombre($event)" />
+
+  </fieldset>
+  <fieldset>
+    <label for="string">ingrese su apellido</label>
+    <input
+    type="text"
+    name=""
+    [value]="alumno.apellido"
+    (input)="cambiarApellido($event)" />
+
+  </fieldset>
+  <fieldset>
+    <label for="">Edad</label>
+  </fieldset>
+  <fieldset>
+    <input
+    type="number"
+    name="edad"
+    [value]="alumno.edad"
+    (input)="cambiarEdad($event)" />
+  </fieldset>
+  <label for="TipoSeccion">Seleccione el tipo de Seccion</label>
+  <select [value]="alumno.seccion"
+
+  (change)="cambiarSeccion($event)"
+
+  value="" id="">
+    <option *ngFor="let seccion of secciones"
+    [value]="seccion"
+
+  >
+    {{ seccion }}
+  </option>
+
+  </select>
+
+  <br>
+  <button
+     (click)="guardar()"
+
+  >Registrar :D</button>
